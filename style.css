@@ -1,145 +1,214 @@
-/* ------------------------- BASE GERAL ------------------------- */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #f3f6fd;
-  color: #333;
+@font-face {
+    font-family: 'SuffolkPunch';
+    src: url('assets/fonts/SuffolkPunch.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* ------------------------- TOPO / HEADER ------------------------- */
-header {
-  background: transparent;
-  padding: 20px 80px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 10;
+:root {
+    --cor-clara: #f1e6ce;
+    --cor-escura: #12100e;
+    --destaque: #d39652;
+    --destaque-claro: #d9a861;
+    --texto-claro: #3a2f1d;
+    --marrom-nome: #5d3b23;
+    --ambar-claro: #e3b07f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--cor-clara);
+    color: var(--texto-claro);
 }
 
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    background: var(--cor-clara);
+    color: var(--texto-claro);
+    position: relative;
 }
 
-/* deixei sem max-width para o layout expandir em telas grandes */
-/* se quiser limitar em certas seções, use outras classes específicas */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 10px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
 
 .logo {
-  font-weight: bold;
-  font-size: 24px;
+    font-size: 32px;
+    color: var(--marrom-nome);
+    font-family: 'SuffolkPunch', serif;
+    margin-right: auto;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  padding-left: 0;
-  margin: 0;
+.navbar a {
+    font-size: 18px;
+    color: var(--texto-claro);
+    margin-right: 35px;
+    transition: .5s;
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s ease;
+.navbar a:hover,
+.navbar a.active {
+    color: var(--destaque);
 }
 
-nav ul li a.active,
-nav ul li a:hover {
-  color: #3498db;
+.toggle-icon {
+    font-size: 24px;
+    cursor: pointer;
+    background: transparent;
 }
 
-/* ------------------------- HERO (SEÇÃO PRINCIPAL) ------------------------- */
-.hero {
-  display: flex;
-  align-items: center;
-  height: 100vh;
-  padding: 0 80px;
-  /* garante que use toda a largura */
-  width: 100%;
-  box-sizing: border-box;
+.toggle-icon.disabled {
+    pointer-events: none;
 }
 
-.hero-text {
-  /* para ocupar mais espaço e alinhar à esquerda */
-  max-width: 600px;
-  text-align: left;
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 10% 0;
 }
 
-.hero h1 {
-  font-size: 48px;
-  margin: 10px 0;
+.home-content {
+    max-width: 600px;
 }
 
-.hero h2 {
-  font-size: 28px;
-  font-weight: 400;
+.home-content h1 {
+    font-size: 56px;
+    font-family: 'SuffolkPunch', serif;
+    color: var(--marrom-nome);
 }
 
-.highlight {
-  color: #3498db;
-  font-weight: 600;
+.home-content h3 {
+    font-size: 28px;
+    font-weight: 500;
 }
 
-.hero p {
-  margin: 20px 0;
-  line-height: 1.6;
-  font-size: 16px;
+.home-content h3 span {
+    color: var(--destaque);
+    font-weight: 600;
 }
 
-/* ------------------------- REDES SOCIAIS ------------------------- */
-.socials {
-  margin-top: 10px;
+.home-content p {
+    font-size: 16px;
+    margin: 15px 0;
 }
 
-.socials a img {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-  transition: transform 0.2s ease;
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--destaque);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--destaque);
+    margin: 5px 15px 25px 0;
+    transition: .5s;
 }
 
-.socials a img:hover {
-  transform: scale(1.1);
+.social-media a:hover {
+    background: var(--destaque);
+    color: #fff;
 }
 
-/* ------------------------- BOTÃO DE DOWNLOAD ------------------------- */
 .btn {
-  display: inline-block;
-  background: #3498db;
-  color: #fff;
-  padding: 12px 20px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: 20px;
-  transition: background 0.3s ease;
+    display: inline-block;
+    padding: 11px 32px;
+    background: var(--destaque-claro);
+    border: 2px solid var(--destaque-claro);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #1b1b1b;
+    font-weight: 600;
+    transition: .5s;
 }
 
 .btn:hover {
-  background: #2980b9;
+    background: transparent;
+    color: var(--destaque-claro);
 }
 
-/* ------------------------- BOTÃO DE CONTATO FLUTUANTE ------------------------- */
-.contact-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
-  background-color: #3498db;
-  padding: 12px;
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease;
+.home-img img {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    width: 45%;
+    pointer-events: none;
 }
 
-.contact-float img {
-  width: 24px;
-  height: 24px;
-  filter: invert(1); /* deixa o ícone branco mesmo sendo preto */
+/* MODO ESCURO */
+#dark-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--cor-escura);
+    color: var(--cor-clara);
 }
 
-.contact-float:hover {
-  transform: scale(1.1);
+#dark-container .logo,
+#dark-container .navbar a {
+    color: var(--cor-clara);
+}
+
+#dark-container .navbar a:hover,
+#dark-container .navbar a.active {
+    color: var(--destaque-claro);
+}
+
+#dark-container .home-content h1 {
+    color: var(--cor-clara); }
+
+
+#dark-container .home-content h3 span {
+    color: var(--destaque-claro);
+}
+
+#dark-container .social-media a {
+    border-color: var(--destaque-claro);
+    color: var(--destaque-claro);
+}
+
+#dark-container .social-media a:hover {
+    background: var(--destaque-claro);
+    color: #1b1b1b;
+}
+
+#dark-container .btn {
+    background: var(--destaque-claro);
+    border-color: var(--destaque-claro);
+    color: #1b1b1b;
+}
+
+#dark-container .btn:hover {
+    background: transparent;
+    color: var(--destaque-claro);
+}
+
+#container,
+#dark-container {
+    clip-path: circle(0% at 0 0);
+    transition-delay: 1.5s;
+}
+
+.active#container,
+.active#dark-container {
+    z-index: 1;
+    clip-path: circle(150% at 0 0);
+    transition: 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }

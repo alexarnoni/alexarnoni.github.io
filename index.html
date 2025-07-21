@@ -1,50 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alexandre Arnoni</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alexandre Arnoni</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
 </head>
+
 <body>
-  <header>
-    <div class="container">
-      <h1 class="logo">Alexandre.</h1>
-      <nav>
-        <ul>
-          <li><a href="#inicio" class="active">Início</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#portfolio">Portfólio</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
+    <div class="container active" id="container">
+        <header class="header">
+            <a href="#" class="logo">Alexandre</a>
+
+            <nav class="navbar">
+                <a href="#" class="active">Início</a>
+                <a href="#">Sobre</a>
+                <a href="#">Skills</a>
+                <a href="#">Portfólio</a>
+                <a href="#">Contato</a>
+            </nav>
+
+            <div class="toggle-icon">
+                <i class="bx bx-moon"></i>
+            </div>
+        </header>
+
+        <section class="home">
+            <div class="home-content">
+                <h3>Olá, sou eu!</h3>
+                <h1>Alexandre Arnoni</h1>
+                <h3>E eu sou um <span>Desenvolvedor Python e Analista de Dados</span></h3>
+                <p>Transformando dados em valor com Python, automação e visualização.
+                   Apaixonado por tecnologia, APIs e projetos com impacto real.</p>
+
+                <div class="social-media">
+                    <a href="https://www.linkedin.com/in/alexandrearnoni" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://github.com/alexarnoni" target="_blank"><i class="bx bxl-github"></i></a>
+                    <a href="#"><i class="bx bxl-instagram"></i></a>
+                </div>
+
+                <a href="dev_curriculo_Alexandre_Arnoni.pdf" class="btn" target="_blank">Download CV</a>
+            </div>
+
+            <div class="home-img">
+                <img src="imgDark.png" alt="Foto ou Arte de Alexandre">
+            </div>
+        </section>
     </div>
-  </header>
 
-  <section id="inicio" class="hero">
-    <div class="container">
-      <div class="hero-text">
-        <h3>Olá, sou eu!</h3>
-        <h1>Alexandre Arnoni</h1>
-        <h2>E eu sou um <span class="highlight">Desenvolvedor Python e Analista de Dados</span></h2>
-        <p>Em desenvolvimento</p>
-        <div class="socials">
-          <a href="#"><img src="assets/icon-facebook.svg" alt="Facebook" /></a>
-          <a href="#"><img src="assets/icon-github.svg" alt="GitHub" /></a>
-          <a href="#"><img src="assets/icon-linkedin.svg" alt="LinkedIn" /></a>
-        </div>
-        <a href="assets/cv.pdf" class="btn" download>Download CV</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Botão de contato flutuante -->
-  <a href="mailto:alexandre@email.com" class="contact-float" title="Entre em contato">
-    <img src="assets/icon-mail.svg" alt="Contato" />
-  </a>
-
+    <script src="script.js"></script>
 </body>
+
 </html>
