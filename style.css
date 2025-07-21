@@ -1,3 +1,4 @@
+/* ------------------------- BASE GERAL ------------------------- */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -5,9 +6,10 @@ body {
   color: #333;
 }
 
+/* ------------------------- TOPO / HEADER ------------------------- */
 header {
   background: transparent;
-  padding: 20px 40px;
+  padding: 20px 80px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -15,12 +17,13 @@ header {
 }
 
 .container {
-  max-width: 1100px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
+/* deixei sem max-width para o layout expandir em telas grandes */
+/* se quiser limitar em certas seções, use outras classes específicas */
 
 .logo {
   font-weight: bold;
@@ -31,12 +34,15 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
+  padding-left: 0;
+  margin: 0;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 nav ul li a.active,
@@ -44,17 +50,21 @@ nav ul li a:hover {
   color: #3498db;
 }
 
+/* ------------------------- HERO (SEÇÃO PRINCIPAL) ------------------------- */
 .hero {
-  padding-top: 120px;
-  padding-bottom: 60px;
   display: flex;
   align-items: center;
-  justify-content: center;
   height: 100vh;
+  padding: 0 80px;
+  /* garante que use toda a largura */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .hero-text {
+  /* para ocupar mais espaço e alinhar à esquerda */
   max-width: 600px;
+  text-align: left;
 }
 
 .hero h1 {
@@ -75,13 +85,26 @@ nav ul li a:hover {
 .hero p {
   margin: 20px 0;
   line-height: 1.6;
+  font-size: 16px;
+}
+
+/* ------------------------- REDES SOCIAIS ------------------------- */
+.socials {
+  margin-top: 10px;
 }
 
 .socials a img {
   width: 30px;
+  height: 30px;
   margin-right: 10px;
+  transition: transform 0.2s ease;
 }
 
+.socials a img:hover {
+  transform: scale(1.1);
+}
+
+/* ------------------------- BOTÃO DE DOWNLOAD ------------------------- */
 .btn {
   display: inline-block;
   background: #3498db;
@@ -91,4 +114,9 @@ nav ul li a:hover {
   text-decoration: none;
   font-weight: 600;
   margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #2980b9;
 }
