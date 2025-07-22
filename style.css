@@ -162,11 +162,19 @@ section.visible {
 }
 
 .home-img img {
-    position: absolute;
-    bottom: 0;
-    right: 30px;
-    width: 45%;
-    pointer-events: none;
+    position: relative;
+    max-width: 100%;
+    width: 420px;
+    height: auto;
+    object-fit: contain;
+}
+
+.home-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    text-align: center;
 }
 
 /* MODO ESCURO */
@@ -267,7 +275,10 @@ section.visible {
   }
 
   .home-img img {
-    width: 60%;
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    object-fit: contain;
   }
 
   .project-grid {
