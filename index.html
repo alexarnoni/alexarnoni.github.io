@@ -15,11 +15,11 @@
             <a href="#" class="logo">Alexandre</a>
 
             <nav class="navbar">
-                <a href="#" class="active">Início</a>
-                <a href="#">Sobre</a>
-                <a href="#">Skills</a>
-                <a href="#">Portfólio</a>
-                <a href="#">Contato</a>
+                <a href="#home" class="active">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#skills">Skills</a>
+                <a href="#projetos">Portfólio</a>
+                <a href="#contato">Contato</a>
             </nav>
 
             <div class="toggle-icon">
@@ -27,7 +27,7 @@
             </div>
         </header>
 
-        <section class="home">
+        <section class="home" id="home">
             <div class="home-content">
                 <h3>Olá, sou eu!</h3>
                 <h1>Alexandre Arnoni</h1>
@@ -38,14 +38,81 @@
                 <div class="social-media">
                     <a href="https://www.linkedin.com/in/alexandrearnoni" target="_blank"><i class="bx bxl-linkedin"></i></a>
                     <a href="https://github.com/alexarnoni" target="_blank"><i class="bx bxl-github"></i></a>
-                    <a href="#"><i class="bx bxl-instagram"></i></a>
                 </div>
 
-                <a href="dev_curriculo_Alexandre_Arnoni.pdf" class="btn" target="_blank">Download CV</a>
+                <div class="dropdown">
+                    <button class="btn">Download CV</button>
+                    <div class="dropdown-content">
+                        <a href="cv_python_pt.pdf" target="_blank">Dev Python (PT)</a>
+                        <a href="cv_dados_pt.pdf" target="_blank">Análise de Dados (PT)</a>
+                        <a href="cv_python_en.pdf" target="_blank">Dev Python (EN)</a>
+                        <a href="cv_dados_en.pdf" target="_blank">Data Analyst (EN)</a>
+                    </div>
+                </div>
             </div>
 
             <div class="home-img">
                 <img src="imgDark.png" alt="Foto ou Arte de Alexandre">
+            </div>
+        </section>
+
+        <section class="sobre" id="sobre">
+            <div class="section-container">
+                <h2 class="section-title">Sobre Mim</h2>
+                <p class="section-text">
+                    Desenvolvedor backend em transição de carreira, com experiência prática em Python, automação e análise de dados. 
+                    Atuei por quase 10 anos no setor público, onde desenvolvi habilidades de análise, organização e resolução de problemas — 
+                    hoje aplicadas à criação de bots, APIs e sistemas com valor real. Tenho formações técnicas em Informática, Comércio Exterior e 
+                    certificação em Google Data Analytics. Meu foco está em desenvolvimento com propósito e impacto direto.
+                </p>
+            </div>
+        </section>
+
+        <section class="skills" id="skills">
+            <div class="section-container">
+                <h2 class="section-title">Skills</h2>
+                <p class="section-text">
+                    <strong>Linguagens e Frameworks:</strong> Python, SQL, JavaScript, FastAPI, Django, HTML/CSS<br>
+                    <strong>Ferramentas e Bibliotecas:</strong> Pandas, Chart.js, DataTables, REST APIs, Telegram Bot API<br>
+                    <strong>Banco de Dados:</strong> PostgreSQL, SQLite<br>
+                    <strong>Versionamento:</strong> Git, GitHub<br>
+                    <strong>Outros:</strong> VS Code, Docker (básico), Excel Avançado, Power BI (básico)
+                </p>
+            </div>
+        </section>
+
+        <section class="projetos" id="projetos">
+            <div class="section-container">
+                <h2 class="section-title">Projetos</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>EV+ Betting Bot</h3>
+                        <p>Bot em Python que detecta valor esperado positivo (EV+) em apostas esportivas e envia alertas via Telegram.</p>
+                        <a href="https://github.com/alexarnoni/TuringOdds" class="btn" target="_blank">Ver no GitHub</a>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>PlayMood</h3>
+                        <p>Recomendador de playlists baseado em sentimento do usuário, integrando HuggingFace e Spotify API.</p>
+                        <a href="https://github.com/alexarnoni/api_spotify_machineLearning" class="btn" target="_blank">Ver no GitHub</a>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Organizador Financeiro</h3>
+                        <p>Dashboard web para controle de finanças pessoais com autenticação, gráficos e PostgreSQL integrado.</p>
+                        <a href="https://github.com/alexarnoni/organizador-financeiro" class="btn" target="_blank">Ver no GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contato" id="contato">
+            <div class="section-container">
+                <h2 class="section-title">Contato</h2>
+                <p class="section-text">
+                    Quer conversar, colaborar ou tem uma oportunidade? Me envie um e-mail:
+                </p>
+                <p class="section-email">alexandre.anf@gmail.com</p>
             </div>
         </section>
     </div>

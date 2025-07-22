@@ -5,6 +5,10 @@
     font-style: normal;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --cor-clara: #f1e6ce;
     --cor-escura: #12100e;
@@ -39,10 +43,11 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 30px 10px;
+    padding: 30px 30px;
     background: transparent;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     z-index: 100;
 }
 
@@ -75,11 +80,24 @@ body {
     pointer-events: none;
 }
 
+section {
+    padding: 100px 10%;
+    min-height: 100vh;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .home {
-    height: 100vh;
     display: flex;
     align-items: center;
-    padding: 60px 10% 0;
+    justify-content: space-between;
+    padding: 100px 10% 0;
 }
 
 .home-content {
@@ -172,8 +190,8 @@ body {
 }
 
 #dark-container .home-content h1 {
-    color: var(--cor-clara); }
-
+    color: var(--cor-clara); 
+}
 
 #dark-container .home-content h3 span {
     color: var(--destaque-claro);
@@ -273,4 +291,111 @@ body {
     padding: 0 10px;
     text-align: center;
   }
+}
+
+.section-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--marrom-nome);
+}
+
+.section-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--texto-claro);
+    margin-bottom: 40px;
+}
+
+.section-email {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--marrom-nome);
+}
+
+.project-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.project-card {
+    background-color: transparent;
+    padding: 10px 0;
+}
+
+.project-card h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: var(--marrom-nome);
+}
+
+.project-card p {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: var(--texto-claro);
+}
+
+#dark-container .section-title {
+    color: var(--destaque-claro);
+}
+
+#dark-container .section-text {
+    color: var(--cor-clara);
+}
+
+#dark-container .section-email {
+    color: var(--destaque-claro);
+}
+
+#dark-container .project-card h3 {
+    color: var(--destaque-claro);
+}
+
+#dark-container .project-card p {
+    color: var(--cor-clara);
+}
+
+/* Dropdown para Download de CV */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown .btn {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--cor-clara);
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  padding: 10px 0;
+  z-index: 99;
+  border-radius: 10px;
+  min-width: 220px;
+}
+
+.dropdown-content a {
+  display: block;
+  color: var(--texto-claro);
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--destaque-claro);
+  color: #1b1b1b;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
