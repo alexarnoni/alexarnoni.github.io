@@ -212,3 +212,65 @@ body {
     clip-path: circle(150% at 0 0);
     transition: 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .navbar a {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .home {
+    flex-direction: column;
+    text-align: center;
+    padding: 120px 5% 0;
+  }
+
+  .home-content {
+    max-width: 100%;
+  }
+
+  .home-img {
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .home-img img {
+    width: 60%;
+  }
+
+  .project-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .section-title {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .section-text, .section-email {
+    font-size: 14px;
+    padding: 0 10px;
+    text-align: center;
+  }
+}
