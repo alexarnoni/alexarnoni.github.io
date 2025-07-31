@@ -67,7 +67,6 @@ const observer = new IntersectionObserver(entries => {
 
 sections.forEach(section => observer.observe(section));
 
-// Menu hambúrguer responsivo
 // Menu hambúrguer responsivo (suporte ao modo escuro)
 const menuToggles = document.querySelectorAll('.menu-toggle');
 
@@ -96,18 +95,3 @@ menuToggles.forEach(toggle => {
 // Ativa dark-mode por padrão (se desejar)
 document.querySelector('#container').classList.remove('active');
 document.querySelector('#dark-container').classList.add('active');
-
-
-menuToggle.setAttribute('aria-expanded', false);
-
-// Fecha o menu ao clicar em um link (mobile)
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    const nav = document.querySelector('.nav-links');
-    if (nav.classList.contains('open')) {
-      nav.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', false);
-    }
-  });
-});
-
