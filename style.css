@@ -30,6 +30,7 @@ html {
 body {
     background-color: var(--cor-clara);
     color: var(--texto-claro);
+    transition: background-color 0.5s ease, color 0.5s ease;    
 }
 
 .container {
@@ -86,6 +87,7 @@ section {
     opacity: 0;
     transform: translateY(40px);
     transition: all 0.6s ease;
+    scroll-margin-top: 100px;
 }
 
 section.visible {
@@ -144,6 +146,11 @@ section.visible {
     color: #fff;
 }
 
+a:focus, button:focus, .toggle-icon:focus {
+  outline: 2px dashed var(--destaque);
+  outline-offset: 4px;
+}
+
 .btn {
     display: inline-block;
     padding: 11px 32px;
@@ -162,7 +169,6 @@ section.visible {
 }
 
 .home-img img {
-    position: relative;
     max-width: 100%;
     width: 420px;
     height: auto;
@@ -324,33 +330,10 @@ section.visible {
     margin-bottom: 40px;
 }
 
-.section-email {
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--marrom-nome);
-}
-
 .project-grid {
     display: flex;
     flex-direction: column;
     gap: 30px;
-}
-
-.project-card {
-    background-color: transparent;
-    padding: 10px 0;
-}
-
-.project-card h3 {
-    font-size: 20px;
-    margin-bottom: 5px;
-    color: var(--marrom-nome);
-}
-
-.project-card p {
-    font-size: 15px;
-    margin-bottom: 10px;
-    color: var(--texto-claro);
 }
 
 #dark-container .section-title {
@@ -359,10 +342,6 @@ section.visible {
 
 #dark-container .section-text {
     color: var(--cor-clara);
-}
-
-#dark-container .section-email {
-    color: var(--destaque-claro);
 }
 
 #dark-container .project-card h3 {
@@ -409,4 +388,277 @@ section.visible {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.skills-col h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: var(--marrom-nome);
+}
+
+.skills-col ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-col ul li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.skills-col ul li i {
+  font-size: 18px;
+  color: var(--destaque);
+  margin-right: 8px;
+  transition: transform 0.2s ease;
+}
+
+.skills-col ul li:hover i {
+  transform: scale(1.2);
+}
+
+#dark-container .skills-col h3 {
+  color: var(--destaque-claro);
+}
+
+#dark-container .skills-col ul li {
+  color: var(--cor-clara);
+}
+
+#dark-container .skills-col ul li i {
+  color: var(--destaque-claro);
+}
+.project-card {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-img:hover {
+    transform: scale(1.02);
+}
+
+.project-info {
+    text-align: center;
+}
+
+.project-info h3 {
+    font-size: 20px;
+    color: var(--marrom-nome);
+    margin-bottom: 5px;
+}
+
+.project-info p {
+    font-size: 15px;
+    color: var(--texto-claro);
+    margin-bottom: 15px;
+}
+
+/* Modo escuro */
+#dark-container .project-info h3 {
+    color: var(--destaque-claro);
+}
+
+#dark-container .project-info p {
+    color: var(--cor-clara);
+}
+
+#dark-container .project-card {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .project-card {
+        padding: 10px;
+    }
+
+    .project-img {
+        width: 100%;
+    }
+
+    .project-info h3 {
+        font-size: 18px;
+    }
+
+    .project-info p {
+        font-size: 14px;
+    }
+}
+
+.contact-info {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.contact-info p {
+  margin-bottom: 12px;
+}
+
+.contact-info i {
+  margin-right: 8px;
+  color: var(--destaque);
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.contact-info a {
+  color: var(--texto-claro);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover {
+  color: var(--destaque);
+}
+
+#dark-container .contact-info a {
+  color: var(--cor-clara);
+}
+
+#dark-container .contact-info a:hover {
+  color: var(--destaque-claro);
+}
+
+.btn-topo {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--destaque);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 14px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 999;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  visibility: visible;
+}
+
+.btn-topo.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#dark-container .btn-topo {
+  background-color: var(--destaque-claro);
+  color: #1b1b1b;
+}
+
+#dark-container .btn-topo:hover {
+  background-color: #fff;
+}
+
+.header {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--cor-clara); /* garante contraste com o fundo */
+}
+
+#dark-container .header {
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+  background-color: var(--cor-escura); /* reforça a separação */
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--texto-claro);
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 30px;
+    background-color: var(--cor-clara);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 999;
+    
+    display: flex;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  #dark-container .nav-links {
+    background-color: var(--cor-escura);
+  }
+
+  .nav-links a {
+    margin: 0;
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  color: var(--marrom-nome);
+  font-family: 'SuffolkPunch', serif;
+  margin-right: auto;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 28px;
+  height: 28px;
+}
+#dark-container .logo {
+  color: var(--cor-clara);
 }

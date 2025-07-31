@@ -2,122 +2,205 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alexandre Arnoni</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio de Alexandre Arnoni: Desenvolvedor Python e Analista de Dados com foco em automações, APIs e soluções eficientes." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:title" content="Alexandre Arnoni – Desenvolvedor Python & Dados" />
+  <meta property="og:description" content="Portfólio com projetos em Python, APIs, automações e dados." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alexarnoni.github.io/" />
+  <meta property="og:image" content="https://alexarnoni.github.io/assets/img/preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <title>Alexandre Arnoni</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/favicon.png" type="image/x-icon" />
 </head>
 
 <body>
-    <div class="container active" id="container">
-        <header class="header">
-            <a href="#" class="logo">Alexandre</a>
+  <div class="container active" id="container">
 
-            <nav class="navbar">
-                <a href="#home" class="active">Início</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#skills">Skills</a>
-                <a href="#projetos">Portfólio</a>
-                <a href="#contato">Contato</a>
-            </nav>
+    <!-- ====== HEADER ====== -->
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="assets/img/logo.svg" alt="Logo Alexandre Arnoni" class="logo-img" width="32" height="32" />
+            Alexandre
+        </a>
 
-            <div class="toggle-icon">
-                <i class="bx bx-moon"></i>
+      <nav class="navbar" role="navigation" aria-label="Menu principal">
+        <button class="menu-toggle" aria-label="Abrir menu">
+          <i class='bx bx-menu'></i>
+        </button>
+        <div class="nav-links">
+          <a href="#home" class="active">Início</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#skills">Skills</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#contato">Contato</a>
+        </div>
+      </nav>
+
+      <div class="toggle-icon" aria-label="Alternar tema">
+        <i class="bx bx-moon"></i>
+      </div>
+    </header>
+
+    <!-- ====== CONTEÚDO PRINCIPAL ====== -->
+    <main role="main">
+
+      <!-- ====== HOME ====== -->
+      <section class="home" id="home">
+        <div class="home-content">
+          <h3>Olá, sou eu!</h3>
+          <h1>Alexandre Arnoni</h1>
+          <h3>Sou <span>Desenvolvedor Python & Analista de Dados</span></h3>
+          <p>Crio soluções automatizadas, APIs e dashboards que transformam dados em decisões.
+            Focado em eficiência, valor real e impacto direto nos projetos.</p>
+
+          <div class="social-media">
+            <a href="https://www.linkedin.com/in/alexandrearnoni" target="_blank" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+            <a href="https://github.com/alexarnoni" target="_blank" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+          </div>
+
+          <div class="dropdown">
+            <button class="btn">Download CV</button>
+            <div class="dropdown-content">
+              <a href="assets/cv/cv_python_pt.pdf" download>Dev Python (PT)</a>
+              <a href="assets/cv/cv_dados_pt.pdf" download>Análise de Dados (PT)</a>
+              <a href="assets/cv/cv_python_en.pdf" download>Dev Python (EN)</a>
+              <a href="assets/cv/cv_dados_en.pdf" download>Data Analyst (EN)</a>
             </div>
-        </header>
+          </div>
+        </div>
 
-        <section class="home" id="home">
-            <div class="home-content">
-                <h3>Olá, sou eu!</h3>
-                <h1>Alexandre Arnoni</h1>
-                <h3>E eu sou um <span>Desenvolvedor Python e Analista de Dados</span></h3>
-                <p>Transformando dados em valor com Python, automação e visualização.
-                   Apaixonado por tecnologia, APIs e projetos com impacto real.</p>
+        <div class="home-img">
+          <img src="assets/img/home-art.png" alt="Ilustração simbólica com silhueta urbana" loading="lazy" />
+        </div>
+      </section>
 
-                <div class="social-media">
-                    <a href="https://www.linkedin.com/in/alexandrearnoni" target="_blank" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
-                    <a href="https://github.com/alexarnoni" target="_blank" aria-label="GitHub"><i class="bx bxl-github"></i></a>
-                </div>
+      <!-- ====== SOBRE ====== -->
+      <section class="sobre" id="sobre">
+        <div class="section-container">
+          <h2 class="section-title">Sobre Mim</h2>
+          <p class="section-text">
+            Sou desenvolvedor backend em transição de carreira, com experiência prática em Python, automações e análise de dados.
+            Durante quase 10 anos no setor público, desenvolvi habilidades de análise crítica, organização e resolução de problemas — hoje aplicadas ao desenvolvimento de bots, APIs e sistemas inteligentes.
+            Tenho formação técnica em Informática e Comércio Exterior, além de certificação em Google Data Analytics. Meu foco é desenvolver soluções com propósito, eficiência e impacto direto.
+          </p>
+        </div>
+      </section>
 
-                <div class="dropdown">
-                    <button class="btn">Download CV</button>
-                    <div class="dropdown-content">
-                        <a href="cv_python_pt.pdf" target="_blank">Dev Python (PT)</a>
-                        <a href="cv_dados_pt.pdf" target="_blank">Análise de Dados (PT)</a>
-                        <a href="cv_python_en.pdf" target="_blank">Dev Python (EN)</a>
-                        <a href="cv_dados_en.pdf" target="_blank">Data Analyst (EN)</a>
-                    </div>
-                </div>
+      <!-- ====== SKILLS ====== -->
+      <section class="skills" id="skills">
+        <div class="section-container">
+          <h2 class="section-title">Skills</h2>
+          <div class="skills-grid">
+
+            <div class="skills-col">
+              <h3>Linguagens & Frameworks</h3>
+              <ul>
+                <li><i class='bx bxl-python'></i> Python</li>
+                <li><i class='bx bxs-data'></i> SQL</li>
+                <li><i class='bx bxl-javascript'></i> JavaScript</li>
+                <li><i class='bx bx-code'></i> FastAPI</li>
+                <li><i class='bx bxl-django'></i> Django</li>
+                <li><i class='bx bx-code-alt'></i> HTML / CSS</li>
+              </ul>
             </div>
 
-            <div class="home-img">
-                <img src="assets/img/home-art.png" alt="Ilustração simbólica com silhueta urbana" />
+            <div class="skills-col">
+              <h3>Ferramentas de Dados</h3>
+              <ul>
+                <li><i class='bx bx-bar-chart-alt-2'></i> Pandas</li>
+                <li><i class='bx bx-bar-chart'></i> Power BI (básico)</li>
+                <li><i class='bx bx-table'></i> Excel Avançado</li>
+                <li><i class='bx bx-transfer'></i> REST APIs</li>
+              </ul>
             </div>
-        </section>
 
-        <section class="sobre" id="sobre">
-            <div class="section-container">
-                <h2 class="section-title">Sobre Mim</h2>
-                <p class="section-text">
-                    Desenvolvedor backend em transição de carreira, com experiência prática em Python, automação e análise de dados. 
-                    Atuei por quase 10 anos no setor público, onde desenvolvi habilidades de análise, organização e resolução de problemas — 
-                    hoje aplicadas à criação de bots, APIs e sistemas com valor real. Tenho formações técnicas em Informática, Comércio Exterior e 
-                    certificação em Google Data Analytics. Meu foco está em desenvolvimento com propósito e impacto direto.
-                </p>
+            <div class="skills-col">
+              <h3>Dev Tools</h3>
+              <ul>
+                <li><i class='bx bxl-postgresql'></i> PostgreSQL</li>
+                <li><i class='bx bx-data'></i> SQLite</li>
+                <li><i class='bx bxl-git'></i> Git</li>
+                <li><i class='bx bxl-github'></i> GitHub</li>
+                <li><i class='bx bxl-docker'></i> Docker (básico)</li>
+                <li><i class='bx bx-code-block'></i> VS Code</li>
+              </ul>
             </div>
-        </section>
 
-        <section class="skills" id="skills">
-            <div class="section-container">
-                <h2 class="section-title">Skills</h2>
-                <p class="section-text">
-                    <strong>Linguagens e Frameworks:</strong> Python, SQL, JavaScript, FastAPI, Django, HTML/CSS<br>
-                    <strong>Ferramentas e Bibliotecas:</strong> Pandas, Chart.js, DataTables, REST APIs, Telegram Bot API<br>
-                    <strong>Banco de Dados:</strong> PostgreSQL, SQLite<br>
-                    <strong>Versionamento:</strong> Git, GitHub<br>
-                    <strong>Outros:</strong> VS Code, Docker (básico), Excel Avançado, Power BI (básico)
-                </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== PROJETOS ====== -->
+      <section class="projetos" id="projetos">
+        <div class="section-container">
+          <h2 class="section-title">Projetos</h2>
+          <div class="project-grid">
+
+            <div class="project-card">
+              <img src="assets/img/bot-alert.png" alt="EV+ Betting Bot" class="project-img" loading="lazy">
+              <div class="project-info">
+                <h3>EV+ Betting Bot</h3>
+                <p>Bot em Python que detecta valor esperado positivo (EV+) em apostas esportivas e envia alertas via Telegram.</p>
+                <a href="https://github.com/alexarnoni/TuringOdds" class="btn" target="_blank">Ver no GitHub</a>
+              </div>
             </div>
-        </section>
 
-        <section class="projetos" id="projetos">
-            <div class="section-container">
-                <h2 class="section-title">Projetos</h2>
-                <div class="project-grid">
-                    <div class="project-card">
-                        <h3>EV+ Betting Bot</h3>
-                        <p>Bot em Python que detecta valor esperado positivo (EV+) em apostas esportivas e envia alertas via Telegram.</p>
-                        <a href="https://github.com/alexarnoni/TuringOdds" class="btn" target="_blank">Ver no GitHub</a>
-                    </div>
-
-                    <div class="project-card">
-                        <h3>PlayMood</h3>
-                        <p>Recomendador de playlists baseado em sentimento do usuário, integrando HuggingFace e Spotify API.</p>
-                        <a href="https://github.com/alexarnoni/api_spotify_machineLearning" class="btn" target="_blank">Ver no GitHub</a>
-                    </div>
-
-                    <div class="project-card">
-                        <h3>Organizador Financeiro</h3>
-                        <p>Dashboard web para controle de finanças pessoais com autenticação, gráficos e PostgreSQL integrado.</p>
-                        <a href="https://github.com/alexarnoni/organizador-financeiro" class="btn" target="_blank">Ver no GitHub</a>
-                    </div>
-                </div>
+            <div class="project-card">
+              <img src="assets/img/playmood-preview.png" alt="PlayMood Preview" class="project-img" loading="lazy">
+              <div class="project-info">
+                <h3>PlayMood</h3>
+                <p>Recomendador de playlists baseado em sentimento do usuário, integrando HuggingFace e Spotify API.</p>
+                <a href="https://github.com/alexarnoni/api_spotify_machineLearning" class="btn" target="_blank">Ver no GitHub</a>
+              </div>
             </div>
-        </section>
 
-        <section class="contato" id="contato">
-            <div class="section-container">
-                <h2 class="section-title">Contato</h2>
-                <p class="section-text">
-                    Quer conversar, colaborar ou tem uma oportunidade? Me envie um e-mail:
-                </p>
-                <p class="section-email">alexandre.anf@gmail.com</p>
+            <div class="project-card">
+              <img src="assets/img/organizador-preview.png" alt="Organizador Financeiro Preview" class="project-img" loading="lazy">
+              <div class="project-info">
+                <h3>Organizador Financeiro</h3>
+                <p>Dashboard web para controle de finanças pessoais com autenticação, gráficos e PostgreSQL integrado.</p>
+                <a href="https://github.com/alexarnoni/organizador-financeiro" class="btn" target="_blank">Ver no GitHub</a>
+              </div>
             </div>
-        </section>
-    </div>
 
-    <script src="script.js"></script>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== CONTATO ====== -->
+      <section class="contato" id="contato">
+        <div class="section-container">
+          <h2 class="section-title">Contato</h2>
+          <p class="section-text">Quer conversar, colaborar ou tem uma oportunidade?</p>
+          <div class="contact-info">
+            <p><i class='bx bx-envelope'></i> <a href="mailto:alexandre.anf@gmail.com">alexandre.anf@gmail.com</a></p>
+            <p><i class='bx bxl-linkedin-square'></i> <a href="https://www.linkedin.com/in/alexandrearnoni" target="_blank">LinkedIn</a></p>
+            <p><i class='bx bxl-github'></i> <a href="https://github.com/alexarnoni" target="_blank">GitHub</a></p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ====== BOTÃO TOPO ====== -->
+    <a href="#home" class="btn-topo hidden" title="Voltar ao topo" aria-label="Voltar ao topo">
+      <i class='bx bx-chevron-up'></i>
+    </a>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
