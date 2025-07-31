@@ -68,14 +68,35 @@ const observer = new IntersectionObserver(entries => {
 sections.forEach(section => observer.observe(section));
 
 // Menu hambúrguer responsivo
-const menuToggle = document.querySelector('.menu-toggle');
-if (menuToggle) {
-  menuToggle.addEventListener('click', () => {
-    const navLinks = document.querySelector('.nav-links');
+// Menu hambúrguer responsivo (suporte ao modo escuro)
+const menuToggles = document.querySelectorAll('.menu-toggle');
+
+menuToggles.forEach(toggle => {
+  const navLinks = toggle.closest('.navbar')?.querySelector('.nav-links');
+  if (!navLinks) return;
+
+  toggle.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen);
   });
-}
+
+  toggle.setAttribute('aria-expanded', false);
+
+  // Fecha o menu ao clicar em um link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (navLinks.classList.contains('open')) {
+        navLinks.classList.remove('open');
+        toggle.setAttribute('aria-expanded', false);
+      }
+    });
+  });
+});
+
+// Ativa dark-mode por padrão (se desejar)
+document.querySelector('#container').classList.remove('active');
+document.querySelector('#dark-container').classList.add('active');
+
 
 menuToggle.setAttribute('aria-expanded', false);
 
@@ -90,5 +111,3 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
-document.querySelector('#container').classList.remove('active');
-document.querySelector('#dark-container').classList.add('active');

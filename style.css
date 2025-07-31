@@ -72,9 +72,14 @@ body {
 }
 
 .toggle-icon {
-    font-size: 24px;
-    cursor: pointer;
-    background: transparent;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 24px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--texto-claro);
+  z-index: 999;
 }
 
 .toggle-icon.disabled {
@@ -236,6 +241,10 @@ a:focus, button:focus, .toggle-icon:focus {
 #dark-container {
     clip-path: circle(0% at 0 0);
     transition-delay: 1.5s;
+}
+
+#dark-container .toggle-icon {
+  color: var(--cor-clara);
 }
 
 .active#container,
@@ -611,6 +620,11 @@ a:focus, button:focus, .toggle-icon:focus {
     display: block;
   }
 
+@media (max-width: 768px) {
+  .home {
+    padding-top: 160px; 
+  }
+}
   .nav-links {
     flex-direction: column;
     position: absolute;
@@ -662,3 +676,18 @@ a:focus, button:focus, .toggle-icon:focus {
 #dark-container .logo {
   color: var(--cor-clara);
 }
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+@media (max-width: 768px) {
+  .nav-controls {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+}
+
