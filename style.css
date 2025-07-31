@@ -590,6 +590,10 @@ a:focus, button:focus, .toggle-icon:focus {
   margin-top: 10px;
 }
 
+.dropdown.open .dropdown-content {
+  display: block;
+}
+
 .dropdown-content a {
   display: block;
   color: var(--texto-claro) !important;
@@ -607,4 +611,52 @@ a:focus, button:focus, .toggle-icon:focus {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.skills-col h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: var(--marrom-nome);
+}
+
+.skills-col ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-col ul li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.skills-col ul li i {
+  font-size: 18px;
+  color: var(--destaque);
+  margin-right: 8px;
+  transition: transform 0.2s ease;
+}
+
+.skills-col ul li:hover i {
+  transform: scale(1.2);
+}
+
+#dark-container .skills-col h3 {
+  color: var(--destaque-claro);
+}
+
+#dark-container .skills-col ul li {
+  color: var(--cor-clara);
+}
+
+#dark-container .skills-col ul li i {
+  color: var(--destaque-claro);
 }

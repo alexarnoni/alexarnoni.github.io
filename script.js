@@ -95,3 +95,24 @@ menuToggles.forEach(toggle => {
 // Ativa dark-mode por padrão (se desejar)
 document.querySelector('#container').classList.remove('active');
 document.querySelector('#dark-container').classList.add('active');
+
+// Dropdown (Download CV) com clique
+document.querySelectorAll('.dropdown .btn').forEach(btn => {
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    const dropdown = this.closest('.dropdown');
+    dropdown.classList.toggle('open');
+
+    // Fecha outros dropdowns se houver
+    document.querySelectorAll('.dropdown').forEach(d => {
+      if (d !== dropdown) d.classList.remove('open');
+    });
+  });
+});
+
+// Fecha dropdown ao clicar fora
+window.addEventListener('click', function () {
+  document.querySelectorAll('.dropdown.open').forEach(drop => {
+    drop.classList.remove('open');
+  });
+});
