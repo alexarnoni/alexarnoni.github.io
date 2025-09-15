@@ -1,208 +1,146 @@
-// === Tema ================================================================
-const body = document.body;
-const themeToggle = document.querySelector('#theme-toggle');
-const themeIcon = themeToggle?.querySelector('i');
-const prefersDarkScheme = typeof window.matchMedia === 'function'
-  ? window.matchMedia('(prefers-color-scheme: dark)')
-  : null;
-const THEME_STORAGE_KEY = 'alexarnoni-theme';
+// === THEME: clona container claro para dark e configura toggle ===
+const container = document.querySelector('.container');
+const cloneContainer = container.cloneNode(true);
+cloneContainer.id = 'dark-container';
+document.body.appendChild(cloneContainer);
+cloneContainer.classList.remove('active');
 
-let storage = null;
-try {
-  storage = window.localStorage;
-} catch (error) {
-  storage = null;
-}
+// Sincroniza imagem (se necessário)
+const homeImgSrc = container.querySelector('.home-img img')?.getAttribute('src');
+const darkContainerImg = cloneContainer.querySelector('.home-img img');
+if (homeImgSrc && darkContainerImg) darkContainerImg.setAttribute('src', homeImgSrc);
 
-let storedTheme = null;
-if (storage) {
-  storedTheme = storage.getItem(THEME_STORAGE_KEY);
-}
-let userPreference = storedTheme || null;
+const toggleIcons = document.querySelectorAll('.toggle-icon');
+const iconEls = document.querySelectorAll('.toggle-icon i');
+const darkContainer = document.querySelector('#dark-container');
 
-function applyTheme(theme, { savePreference = false } = {}) {
-  const isDark = theme === 'dark';
-  body.classList.toggle('dark-mode', isDark);
+toggleIcons.forEach(toggle => {
+  toggle.addEventListener('click', () => {
+    toggle.classList.add('disabled');
+    setTimeout(() => toggle.classList.remove('disabled'), 1500);
 
-  if (themeToggle) {
-    themeToggle.setAttribute('aria-pressed', String(isDark));
-    themeToggle.setAttribute('aria-label', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
-  }
-
-  if (themeIcon) {
-    themeIcon.classList.toggle('bx-sun', isDark);
-    themeIcon.classList.toggle('bx-moon', !isDark);
-  }
-
-  if (savePreference) {
-    userPreference = theme;
-    if (storage) {
-      storage.setItem(THEME_STORAGE_KEY, theme);
-    }
-  }
-}
-
-applyTheme(userPreference || (prefersDarkScheme?.matches ? 'dark' : 'light'));
-
-const handleThemeTransitionEnd = event => {
-  if (!body.classList.contains('theme-transition')) return;
-  if (event.target !== body) return;
-  if (event.type === 'transitionend' && event.propertyName !== 'clip-path') return;
-
-  body.classList.remove('theme-transition');
-};
-
-body.addEventListener('transitionend', handleThemeTransitionEnd);
-body.addEventListener('animationend', handleThemeTransitionEnd);
-
-if (themeToggle) {
-  themeToggle.addEventListener('click', event => {
-    const rect = themeToggle.getBoundingClientRect();
-    const isKeyboardTrigger = event.detail === 0 && event.clientX === 0 && event.clientY === 0;
-    const clickX = isKeyboardTrigger ? rect.left + rect.width / 2 : event.clientX;
-    const clickY = isKeyboardTrigger ? rect.top + rect.height / 2 : event.clientY;
-
-    body.style.setProperty('--click-x', `${clickX}px`);
-    body.style.setProperty('--click-y', `${clickY}px`);
-
-    if (body.classList.contains('theme-transition')) {
-      body.classList.remove('theme-transition');
-      void body.offsetWidth;
-    }
-
-    body.classList.add('theme-transition');
-
-    const nextTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
-    applyTheme(nextTheme, { savePreference: true });
+    iconEls.forEach(icon => icon.classList.toggle('bx-sun'));
+    container.classList.toggle('active');
+    darkContainer.classList.toggle('active');
   });
+});
+
+// Ativa dark-mode por padrão (opcional)
+document.querySelector('#container').classList.remove('active');
+document.querySelector('#dark-container').classList.add('active');
+
+// === NAV: scroll spy + botão topo (usa sempre o container ATIVO) ===
+function getActiveContainer() {
+  return document.querySelector('#dark-container.active') || document.querySelector('#container.active');
 }
-
-if (prefersDarkScheme) {
-  const preferenceListener = event => {
-    if (!userPreference) {
-      applyTheme(event.matches ? 'dark' : 'light');
-    }
-  };
-
-  if (typeof prefersDarkScheme.addEventListener === 'function') {
-    prefersDarkScheme.addEventListener('change', preferenceListener);
-  } else if (typeof prefersDarkScheme.addListener === 'function') {
-    prefersDarkScheme.addListener(preferenceListener);
-  }
-}
-
-// === Navegação e botão topo =============================================
-const sections = Array.from(document.querySelectorAll('main section'));
-const navLinks = Array.from(document.querySelectorAll('.navbar a[href^="#"]'));
-const btnTopo = document.querySelector('.btn-topo');
-const header = document.querySelector('.header');
 
 function handleScroll() {
-  if (!sections.length) return;
+  const active = getActiveContainer();
+  if (!active) return;
 
-  const headerOffset = header ? header.offsetHeight + 20 : 100;
-  let currentSectionId = sections[0].id || '';
+  const sections = active.querySelectorAll('section');
+  const navLinks = active.querySelectorAll('.navbar a');
+  const btnTopo = active.querySelector('.btn-topo');
 
+  let current = '';
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - headerOffset;
-    if (window.scrollY >= sectionTop) {
-      currentSectionId = section.id || currentSectionId;
+    const sectionTop = section.offsetTop - 80;
+    const sectionHeight = section.clientHeight;
+    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute('id');
     }
   });
 
   navLinks.forEach(link => {
-    const target = link.getAttribute('href')?.slice(1);
-    link.classList.toggle('active', target === currentSectionId);
+    link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
   });
 
   if (btnTopo) {
-    btnTopo.classList.toggle('hidden', window.scrollY < 300);
+    if (window.scrollY > 300) btnTopo.classList.remove('hidden');
+    else btnTopo.classList.add('hidden');
   }
 }
 
 window.addEventListener('scroll', handleScroll);
-handleScroll();
+handleScroll(); // inicial
 
-// === Animações de entrada ===============================================
+// === Fade-in animation com IntersectionObserver (observa os dois containers) ===
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
-}, { threshold: 0.15 });
+}, { threshold: 0.1 });
 
-sections.forEach(section => observer.observe(section));
+document.querySelectorAll('section').forEach(section => observer.observe(section));
 
-// === Menu hambúrguer ====================================================
+// === Menu hambúrguer (claro e escuro) ===
 document.querySelectorAll('.menu-toggle').forEach(toggle => {
-  const navLinksEl = toggle.closest('.navbar')?.querySelector('.nav-links');
-  if (!navLinksEl) return;
+  const navLinks = toggle.closest('.navbar')?.querySelector('.nav-links');
+  if (!navLinks) return;
 
   toggle.addEventListener('click', () => {
-    const isOpen = navLinksEl.classList.toggle('open');
+    const isOpen = navLinks.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(isOpen));
   });
 
   toggle.setAttribute('aria-expanded', 'false');
 
-  navLinksEl.querySelectorAll('a').forEach(link => {
+  navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      if (navLinksEl.classList.contains('open')) {
-        navLinksEl.classList.remove('open');
+      if (navLinks.classList.contains('open')) {
+        navLinks.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
       }
     });
   });
 });
 
-// === Dropdown (Download CV) ============================================
+// === DROPDOWN (Download CV): hover no desktop + clique no mobile ===
+// CSS já abre no :hover; aqui tratamos clique/touch, acessibilidade e fechar fora.
 document.querySelectorAll('.dropdown .btn').forEach(btn => {
   const dropdown = btn.closest('.dropdown');
   if (!dropdown) return;
 
+  // Acessibilidade
   btn.setAttribute('aria-haspopup', 'true');
   btn.setAttribute('aria-expanded', 'false');
 
-  btn.addEventListener('click', event => {
-    event.preventDefault();
-    event.stopPropagation();
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
 
     const isOpen = dropdown.classList.toggle('open');
     btn.setAttribute('aria-expanded', String(isOpen));
 
+    // Fecha outros dropdowns
     document.querySelectorAll('.dropdown').forEach(other => {
       if (other !== dropdown) {
         other.classList.remove('open');
         const otherBtn = other.querySelector('.btn');
-        if (otherBtn) {
-          otherBtn.setAttribute('aria-expanded', 'false');
-        }
+        if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
       }
     });
   });
 });
 
-window.addEventListener('click', event => {
+// Fecha dropdown ao clicar fora
+window.addEventListener('click', (e) => {
   document.querySelectorAll('.dropdown.open').forEach(drop => {
-    if (!drop.contains(event.target)) {
+    if (!drop.contains(e.target)) {
       drop.classList.remove('open');
       const btn = drop.querySelector('.btn');
-      if (btn) {
-        btn.setAttribute('aria-expanded', 'false');
-      }
+      if (btn) btn.setAttribute('aria-expanded', 'false');
     }
   });
 });
 
-window.addEventListener('keydown', event => {
-  if (event.key === 'Escape') {
+// Fecha dropdown com ESC
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
     document.querySelectorAll('.dropdown.open').forEach(drop => {
       drop.classList.remove('open');
       const btn = drop.querySelector('.btn');
-      if (btn) {
-        btn.setAttribute('aria-expanded', 'false');
-      }
+      if (btn) btn.setAttribute('aria-expanded', 'false');
     });
   }
 });
