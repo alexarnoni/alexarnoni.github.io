@@ -44,8 +44,34 @@ function applyTheme(theme, { savePreference = false } = {}) {
 
 applyTheme(userPreference || (prefersDarkScheme?.matches ? 'dark' : 'light'));
 
+const handleThemeTransitionEnd = event => {
+  if (!body.classList.contains('theme-transition')) return;
+  if (event.target !== body) return;
+  if (event.type === 'transitionend' && event.propertyName !== 'clip-path') return;
+
+  body.classList.remove('theme-transition');
+};
+
+body.addEventListener('transitionend', handleThemeTransitionEnd);
+body.addEventListener('animationend', handleThemeTransitionEnd);
+
 if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
+  themeToggle.addEventListener('click', event => {
+    const rect = themeToggle.getBoundingClientRect();
+    const isKeyboardTrigger = event.detail === 0 && event.clientX === 0 && event.clientY === 0;
+    const clickX = isKeyboardTrigger ? rect.left + rect.width / 2 : event.clientX;
+    const clickY = isKeyboardTrigger ? rect.top + rect.height / 2 : event.clientY;
+
+    body.style.setProperty('--click-x', `${clickX}px`);
+    body.style.setProperty('--click-y', `${clickY}px`);
+
+    if (body.classList.contains('theme-transition')) {
+      body.classList.remove('theme-transition');
+      void body.offsetWidth;
+    }
+
+    body.classList.add('theme-transition');
+
     const nextTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
     applyTheme(nextTheme, { savePreference: true });
   });
