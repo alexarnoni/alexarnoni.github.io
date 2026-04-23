@@ -2,10 +2,542 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=https://alexarnoni.com" />
-  <title>Redirecionando...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alexandre Arnoni – Analista de Dados</title>
+
+  <!-- Google Fonts: Syne (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Boxicons para ícones -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <p>Redirecionando para <a href="https://alexarnoni.com">alexarnoni.com</a>...</p>
+
+  <!-- ========== HEADER / NAV ========== -->
+  <header class="header" id="header">
+    <div class="header-inner">
+
+      <!-- Logo / nome -->
+      <a href="#inicio" class="logo" aria-label="Início">AA</a>
+
+      <!-- Links de navegação (desktop) -->
+      <nav class="navbar" aria-label="Navegação principal">
+        <ul class="nav-links" id="nav-links">
+          <!-- Links apontam para âncoras da mesma página -->
+          <li><a href="#inicio"   class="nav-link active">Início</a></li>
+          <li><a href="#sobre"    class="nav-link">Sobre mim</a></li>
+          <li><a href="#formacao" class="nav-link">Formação</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
+          <li><a href="#contato"  class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Controles do header -->
+      <div class="header-controls">
+        <!-- Toggle claro/escuro -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema claro/escuro">
+          <i class='bx bx-moon' id="theme-icon"></i>
+        </button>
+
+        <!-- Hambúrguer (mobile) -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========== SEÇÃO: INÍCIO ========== -->
+  <section id="inicio" class="section hero">
+    <div class="container">
+      <div class="hero-content">
+
+        <!-- Tag de status -->
+        <div class="status-badge">
+          <span class="dot"></span>
+          Analista &amp; Engenheiro de Dados · São Paulo, BR
+        </div>
+
+        <!-- Nome -->
+        <h1 class="hero-title">
+          Alexandre<br/>Arnoni
+        </h1>
+
+        <!-- Subtítulo animado (typewriter via JS) -->
+        <p class="hero-sub">
+          <span id="typewriter"></span><span class="cursor">|</span>
+        </p>
+
+        <!-- Bio curta -->
+        <p class="hero-bio">
+          Trabalho com dados públicos de 350 mil pessoas durante o dia<br/>
+          e monitoro asteroides com a NASA à noite.
+        </p>
+
+        <!-- CTAs -->
+        <div class="hero-cta">
+          <a href="#portfolio" class="btn btn-primary">Ver Projetos</a>
+          <a href="#contato"   class="btn btn-outline">Falar comigo</a>
+        </div>
+
+        <!-- Redes sociais -->
+        <div class="social-links">
+          <a href="https://linkedin.com/in/alexandrearnoni" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class='bx bxl-linkedin'></i>
+          </a>
+          <a href="https://github.com/alexarnoni" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class='bx bxl-github'></i>
+          </a>
+          <a href="mailto:alexandre.anf@gmail.com" aria-label="E-mail">
+            <i class='bx bx-envelope'></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Coluna direita: card de destaque -->
+      <div class="hero-aside">
+        <div class="hero-card">
+          <div class="card-label">Stack principal</div>
+          <ul class="stack-list">
+            <li><i class='bx bxl-python'></i> Python</li>
+            <li><i class='bx bx-data'></i> PostgreSQL</li>
+            <li><i class='bx bx-bar-chart-alt-2'></i> Power BI</li>
+            <li><i class='bx bxl-docker'></i> Docker</li>
+            <li><i class='bx bx-code-alt'></i> FastAPI</li>
+            <li><i class='bx bxs-analyse'></i> dbt Core</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO: SOBRE MIM ========== -->
+  <section id="sobre" class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">Sobre mim</h2>
+      </div>
+
+      <div class="about-grid">
+
+        <!-- Texto -->
+        <div class="about-text">
+          <p>
+            Dez anos no setor público me ensinaram a trabalhar com dados imperfeitos,
+            processos burocráticos e stakeholders que não falam "SQL". Agora construo
+            os sistemas que eu não tinha à disposição.
+          </p>
+          <p>
+            Sou Analista de Dados na Prefeitura de Praia Grande, onde desenvolvo dashboards
+            e indicadores para apoiar decisões de políticas públicas. Fora do horário
+            comercial, construo projetos próprios que exploram o que aprendo na prática —
+            de pipelines com a NASA a sistemas financeiros.
+          </p>
+          <p>
+            Estou cursando Tecnologia em Ciência de Dados na UNINTER e acredito que
+            dados bem tratados são o caminho mais curto entre uma boa pergunta e
+            uma decisão melhor.
+          </p>
+
+          <!-- Hobbies / interesses -->
+          <div class="hobbies">
+            <h3>Interesses</h3>
+            <div class="hobby-tags">
+              <span>🔭 Astronomia</span>
+              <span>⚽ Futebol / Scouts</span>
+              <span>📊 Visualização de dados</span>
+              <span>🤖 Machine Learning</span>
+              <span>🎮 Jogos de estratégia</span>
+              <span>📚 Ciências em geral</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-num">10+</span>
+            <span class="stat-label">Anos no setor público</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">350k</span>
+            <span class="stat-label">Pessoas impactadas pelos dados</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">4</span>
+            <span class="stat-label">Projetos pessoais em produção</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">NASA</span>
+            <span class="stat-label">APIs integradas (Astraea)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO: FORMAÇÃO ========== -->
+  <section id="formacao" class="section section-alt">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title">Formação</h2>
+      </div>
+
+      <div class="formation-grid">
+
+        <!-- Educação formal -->
+        <div class="formation-col">
+          <h3 class="col-title"><i class='bx bxs-graduation'></i> Educação</h3>
+
+          <div class="timeline">
+
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-period">Em andamento – 2028</span>
+                <h4>Tecnologia em Ciência de Dados</h4>
+                <p>Centro Universitário Internacional – UNINTER · Curitiba, PR (EAD)</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-period">2022</span>
+                <h4>Técnico em Informática</h4>
+                <p>Escola Técnica Estadual – ETEC · Praia Grande, SP</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-period">2015</span>
+                <h4>Tecnologia em Comércio Exterior</h4>
+                <p>Faculdade de Tecnologia – FATEC · Praia Grande, SP</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Certificações -->
+        <div class="formation-col">
+          <h3 class="col-title"><i class='bx bxs-badge-check'></i> Certificações</h3>
+
+          <ul class="cert-list">
+            <li>
+              <i class='bx bxl-google'></i>
+              <span><strong>Google Data Analytics Certificate</strong> – Coursera (2024)</span>
+            </li>
+            <li>
+              <i class='bx bx-code-block'></i>
+              <span>Python para Data Science: NumPy e Pandas – Alura (22h)</span>
+            </li>
+            <li>
+              <i class='bx bx-code-block'></i>
+              <span>Python Pandas: tratando e analisando dados – Alura (12h)</span>
+            </li>
+            <li>
+              <i class='bx bx-stats'></i>
+              <span>Estatística com Python: frequências e medidas – Alura (10h)</span>
+            </li>
+            <li>
+              <i class='bx bx-bar-chart'></i>
+              <span>Data Science: análise e visualização de dados – Alura (6h)</span>
+            </li>
+            <li>
+              <i class='bx bx-code-block'></i>
+              <span>Python: Orientação a Objetos e consumo de APIs – Alura (14h)</span>
+            </li>
+            <li>
+              <i class='bx bx-data'></i>
+              <span>SQL com Oracle: manipulação e consulta de dados – Alura (10h)</span>
+            </li>
+            <li>
+              <i class='bx bxl-github'></i>
+              <span>Git e GitHub – Alura (3 cursos, 22h)</span>
+            </li>
+            <li>
+              <i class='bx bxl-tux'></i>
+              <span>Linux I e II – Alura (12h)</span>
+            </li>
+            <li>
+              <i class='bx bx-code-alt'></i>
+              <span>HTML5, CSS3 e JavaScript – Alura (64h)</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Idiomas -->
+        <div class="formation-col">
+          <h3 class="col-title"><i class='bx bx-world'></i> Idiomas</h3>
+
+          <div class="lang-item">
+            <div class="lang-info">
+              <span>🇧🇷 Português</span>
+              <span class="lang-level">Nativo</span>
+            </div>
+            <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+          </div>
+
+          <div class="lang-item">
+            <div class="lang-info">
+              <span>🇬🇧 Inglês</span>
+              <span class="lang-level">Avançado</span>
+            </div>
+            <div class="lang-bar"><div class="lang-fill" style="width:85%"></div></div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO: PORTFÓLIO ========== -->
+  <section id="portfolio" class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2 class="section-title">Portfólio</h2>
+      </div>
+
+      <p class="section-intro">
+        Projetos autorais construídos para resolver problemas reais — da análise de dados
+        públicos ao monitoramento de asteroides.
+      </p>
+
+      <!-- Grid de projetos -->
+      <div class="projects-grid">
+
+        <!-- Projeto 1: Astraea -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-year">2026</span>
+            <div class="project-links">
+              <a href="https://astraea.alexarnoni.com" target="_blank" rel="noopener" aria-label="Ver projeto Astraea">
+                <i class='bx bx-link-external'></i>
+              </a>
+            </div>
+          </div>
+          <h3>Astraea</h3>
+          <p class="project-desc">
+            Monitoramento de asteroides e eventos solares com dados da NASA. Pipeline end-to-end com
+            dbt Core, modelo Random Forest para classificação de risco e API REST pública.
+          </p>
+          <div class="project-tags">
+            <span>Python</span><span>FastAPI</span><span>PostgreSQL</span>
+            <span>dbt Core</span><span>scikit-learn</span><span>Docker</span>
+          </div>
+        </article>
+
+        <!-- Projeto 2: Olheiro -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-year">2026</span>
+            <div class="project-links">
+              <a href="https://scout.alexarnoni.com" target="_blank" rel="noopener" aria-label="Ver projeto Olheiro">
+                <i class='bx bx-link-external'></i>
+              </a>
+            </div>
+          </div>
+          <h3>Olheiro</h3>
+          <p class="project-desc">
+            Análise de dados do Brasileirão Série A. Dashboard com classificação em tempo real,
+            radar chart de perfil e modelo de scout que identifica joias escondidas por posição.
+          </p>
+          <div class="project-tags">
+            <span>Python</span><span>FastAPI</span><span>PostgreSQL</span>
+            <span>JavaScript</span><span>Docker</span>
+          </div>
+        </article>
+
+        <!-- Projeto 3: EV+ Analyzer -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-year">2025</span>
+            <div class="project-links">
+              <a href="https://github.com/alexarnoni" target="_blank" rel="noopener" aria-label="Ver projeto EV+ no GitHub">
+                <i class='bx bxl-github'></i>
+              </a>
+            </div>
+          </div>
+          <h3>EV+ Sports Analyzer</h3>
+          <p class="project-desc">
+            Bot automatizado para detecção de valor esperado positivo em odds esportivas de 200+
+            ligas. Scanner a cada 2 minutos com alertas via Telegram.
+          </p>
+          <div class="project-tags">
+            <span>Python</span><span>SQLite</span><span>Telegram API</span>
+            <span>APScheduler</span>
+          </div>
+        </article>
+
+        <!-- Projeto 4: Luro -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-year">2025</span>
+            <div class="project-links">
+              <a href="https://luro.alexarnoni.com" target="_blank" rel="noopener" aria-label="Ver projeto Luro">
+                <i class='bx bx-link-external'></i>
+              </a>
+            </div>
+          </div>
+          <h3>Luro</h3>
+          <p class="project-desc">
+            Gerenciador financeiro pessoal com dashboard, metas e importação de extratos CSV/OFX.
+            Autenticação passwordless via magic link com segurança robusta.
+          </p>
+          <div class="project-tags">
+            <span>Python</span><span>FastAPI</span><span>PostgreSQL</span>
+            <span>JavaScript</span><span>Docker</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO: CONTATO ========== -->
+  <section id="contato" class="section section-alt">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2 class="section-title">Contato</h2>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Info de contato -->
+        <div class="contact-info">
+          <p>Tem um projeto interessante, uma pergunta sobre dados ou só quer trocar ideia?
+          Me manda uma mensagem.</p>
+
+          <ul class="contact-list">
+            <li>
+              <i class='bx bx-envelope'></i>
+              <a href="mailto:alexandre.anf@gmail.com">alexandre.anf@gmail.com</a>
+            </li>
+            <li>
+              <i class='bx bxl-linkedin'></i>
+              <a href="https://linkedin.com/in/alexandrearnoni" target="_blank" rel="noopener">
+                linkedin.com/in/alexandrearnoni
+              </a>
+            </li>
+            <li>
+              <i class='bx bxl-github'></i>
+              <a href="https://github.com/alexarnoni" target="_blank" rel="noopener">
+                github.com/alexarnoni
+              </a>
+            </li>
+            <li>
+              <i class='bx bx-phone'></i>
+              <a href="tel:+5513997045600">+55 (13) 99704-5600</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Formulário de contato com validação JS -->
+        <form class="contact-form" id="contact-form" novalidate>
+
+          <!-- Campo: Nome -->
+          <div class="form-group">
+            <label for="nome">Nome <span aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Seu nome completo"
+              autocomplete="name"
+              required
+            />
+            <!-- Mensagem de erro exibida via JS -->
+            <span class="field-error" id="erro-nome"></span>
+          </div>
+
+          <!-- Campo: E-mail -->
+          <div class="form-group">
+            <label for="email">E-mail <span aria-hidden="true">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="seu@email.com"
+              autocomplete="email"
+              required
+            />
+            <span class="field-error" id="erro-email"></span>
+          </div>
+
+          <!-- Campo: Mensagem -->
+          <div class="form-group">
+            <label for="mensagem">Mensagem <span aria-hidden="true">*</span></label>
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              rows="5"
+              placeholder="Sua mensagem..."
+              required
+            ></textarea>
+            <span class="field-error" id="erro-mensagem"></span>
+          </div>
+
+          <!-- Botão de envio -->
+          <button type="submit" class="btn btn-primary btn-full" id="btn-submit">
+            <i class='bx bx-send'></i> Enviar mensagem
+          </button>
+
+          <!-- Feedback de sucesso (oculto até envio) -->
+          <div class="form-success" id="form-success" role="alert" aria-live="polite" hidden>
+            <i class='bx bx-check-circle'></i>
+            Mensagem enviada com sucesso! Entrarei em contato em breve.
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Alexandre Arnoni · Feito com HTML, CSS e JavaScript puro</p>
+      <a href="#inicio" class="back-top" aria-label="Voltar ao topo">
+        <i class='bx bx-chevron-up'></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- ========== BOTÃO VOLTAR AO TOPO ========== -->
+  <button class="btn-topo" id="btn-topo" aria-label="Voltar ao topo" hidden>
+    <i class='bx bx-chevron-up'></i>
+  </button>
+
+  <!-- ========== MODAL DE CONFIRMAÇÃO ========== -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" hidden>
+    <div class="modal">
+      <div class="modal-icon"><i class='bx bx-check-circle'></i></div>
+      <h3 id="modal-titulo">Mensagem enviada!</h3>
+      <p>Obrigado pelo contato, Alexandre. Responderei em breve.</p>
+      <button class="btn btn-primary" id="modal-close">Fechar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
