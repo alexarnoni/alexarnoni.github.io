@@ -16,6 +16,10 @@
 
 /* ---- 1. TOGGLE CLARO / ESCURO ---- */
 
+// Botão de toggle (declarados antes de serem usados)
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon   = document.getElementById('theme-icon');
+
 // Recupera preferência salva no localStorage ou usa preferência do sistema
 const savedTheme = localStorage.getItem('theme');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -24,10 +28,6 @@ const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
 // Aplica o tema ao carregar a página
 document.documentElement.setAttribute('data-theme', initialTheme);
 updateThemeIcon(initialTheme);
-
-// Botão de toggle
-const themeToggle = document.getElementById('theme-toggle');
-const themeIcon   = document.getElementById('theme-icon');
 
 themeToggle.addEventListener('click', () => {
   // Obtém o tema atual e alterna
