@@ -901,8 +901,6 @@ button { cursor: pointer; font-family: var(--font-body); }
 }
 
 /* Mensagem de sucesso embutida no form */
-.form-success[hidden] { display: none; }
-
 .form-success {
   display: flex;
   align-items: center;
@@ -916,15 +914,16 @@ button { cursor: pointer; font-family: var(--font-body); }
   font-weight: 500;
 }
 
-[data-theme="dark"] .form-success[hidden] { display: none; }
-
-.form-success {
+[data-theme="dark"] .form-success {
   background: #052e16;
   color: #4ade80;
   border-color: #166534;
 }
 
 .form-success i { font-size: 20px; }
+
+/* Garante que o atributo hidden do HTML seja respeitado */
+.form-success[hidden] { display: none !important; }
 
 /* ---------- 11. FOOTER ---------- */
 .footer {
