@@ -328,6 +328,9 @@ form.addEventListener('submit', (e) => {
 
   // Simula delay de rede (1.5s) e depois exibe modal de confirmação
   setTimeout(() => {
+    // Personaliza a mensagem do modal com o nome do usuário
+    document.querySelector('.modal p').textContent = `Obrigado pelo contato, ${campoNome.value.trim()}. Responderei em breve.`;
+
     // Limpa o formulário
     form.reset();
 
