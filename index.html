@@ -320,103 +320,99 @@
         públicos ao monitoramento de asteroides.
       </p>
 
-      <!-- Grid de projetos -->
-      <!-- Grid de projetos -->
       <div class="projects-grid">
-
-        <!-- Projeto 1: Astraea -->
         <article class="project-card">
-          <div class="project-header">
-            <span class="project-year">2026</span>
-            <div class="project-links">
-              <a href="https://github.com/alexarnoni" target="_blank" rel="noopener" aria-label="Repositório Astraea no GitHub">
-                <i class='bx bxl-github'></i>
-              </a>
-              <a href="https://astraea.alexarnoni.com" target="_blank" rel="noopener" aria-label="Ver projeto Astraea">
-                <i class='bx bx-link-external'></i>
-              </a>
-            </div>
+          <span class="project-year">2026</span>
+          <h3>Encore</h3>
+          <p class="project-desc">Como as bandas mudam seus repertórios ao vivo? Usei Airflow para orquestrar a coleta de duas APIs e dbt para modelar os dados que alimentam o site.</p>
+          <div class="project-tags">
+            <span>Python</span><span>Airflow</span><span>dbt Core</span><span>PostgreSQL</span>
           </div>
+          <div class="project-links">
+            <a href="https://encore.alexarnoni.com" target="_blank" rel="noopener" aria-label="Ver projeto Encore">Ver projeto</a>
+            <a href="https://github.com/alexarnoni/encore-setlist-analytics" target="_blank" rel="noopener" aria-label="Ver código de Encore">Ver código</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-year">2026</span>
+          <h3>Acervo</h3>
+          <p class="project-desc">Transformei cerca de 413 mil eventos do meu histórico do Spotify em um modelo estrela para Power BI e um dashboard sobre 12 anos de escuta.</p>
+          <div class="project-tags">
+            <span>Python</span><span>pandas</span><span>Power BI</span><span>Chart.js</span>
+          </div>
+          <div class="project-links">
+            <a href="https://musica.alexarnoni.com" target="_blank" rel="noopener" aria-label="Ver projeto Acervo">Ver projeto</a>
+            <a href="https://github.com/alexarnoni/acervo" target="_blank" rel="noopener" aria-label="Ver código de Acervo">Ver código</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-year">2026</span>
           <h3>Astraea</h3>
-          <p class="project-desc">
-            Monitoramento de asteroides e eventos solares com dados da NASA. Pipeline end-to-end com
-            dbt Core, modelo Random Forest para classificação de risco e API REST pública.
-          </p>
+          <p class="project-desc">Construí um pipeline que coleta dados da NASA sobre asteroides próximos à Terra, transforma os registros com dbt e os disponibiliza via FastAPI.</p>
           <div class="project-tags">
-            <span>Python</span><span>FastAPI</span><span>PostgreSQL</span>
-            <span>dbt Core</span><span>scikit-learn</span><span>Docker</span>
+            <span>Python</span><span>dbt Core</span><span>PostgreSQL</span><span>FastAPI</span>
+          </div>
+          <div class="project-links">
+            <a href="https://astraea.alexarnoni.com" target="_blank" rel="noopener" aria-label="Ver projeto Astraea">Ver projeto</a>
+            <a href="https://github.com/alexarnoni/astraea" target="_blank" rel="noopener" aria-label="Ver código de Astraea">Ver código</a>
           </div>
         </article>
 
-        <!-- Projeto 2: Olheiro -->
         <article class="project-card">
-          <div class="project-header">
-            <span class="project-year">2026</span>
-            <div class="project-links">
-              <a href="https://github.com/alexarnoni" target="_blank" rel="noopener" aria-label="Repositório Olheiro no GitHub">
-                <i class='bx bxl-github'></i>
-              </a>
-              <a href="https://scout.alexarnoni.com" target="_blank" rel="noopener" aria-label="Ver projeto Olheiro">
-                <i class='bx bx-link-external'></i>
-              </a>
-            </div>
+          <span class="project-year">2026 · Edição encerrada</span>
+          <h3>Apuração</h3>
+          <p class="project-desc">Criei um painel para acompanhar a apuração de 2026 com dados abertos do TSE e preservei a edição final como um site estático.</p>
+          <div class="project-tags">
+            <span>JavaScript</span><span>Dados abertos</span><span>Cloudflare Pages</span>
           </div>
+          <div class="project-links">
+            <a href="https://apuracao.alexarnoni.com" target="_blank" rel="noopener" aria-label="Ver projeto Apuração">Ver projeto</a>
+            <a href="https://github.com/alexarnoni/apuracao-eleicoes" target="_blank" rel="noopener" aria-label="Ver código de Apuração">Ver código</a>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="projects-subtitle">Outros projetos</h3>
+      <div class="projects-grid">
+        <article class="project-card">
+          <span class="project-year">2026 · Coleta pausada</span>
           <h3>Olheiro</h3>
-          <p class="project-desc">
-            Análise de dados do Brasileirão Série A. Dashboard com classificação em tempo real,
-            radar chart de perfil e modelo de scout que identifica joias escondidas por posição.
-          </p>
+          <p class="project-desc">Plataforma de scouting do Brasileirão com rankings por posição. As métricas são normalizadas por 90 minutos e o score leva em conta o tempo em campo.</p>
           <div class="project-tags">
-            <span>Python</span><span>FastAPI</span><span>PostgreSQL</span>
-            <span>JavaScript</span><span>Docker</span>
+            <span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>Docker</span>
+          </div>
+          <div class="project-links">
+            <a href="https://scout.alexarnoni.com" target="_blank" rel="noopener" aria-label="Ver projeto Olheiro">Ver projeto</a>
+            <a href="https://github.com/alexarnoni/scout" target="_blank" rel="noopener" aria-label="Ver código de Olheiro">Ver código</a>
           </div>
         </article>
 
-        <!-- Projeto 3: EV+ Analyzer -->
         <article class="project-card">
-          <div class="project-header">
-            <span class="project-year">2025</span>
-            <div class="project-links">
-              <a href="https://github.com/alexarnoni" target="_blank" rel="noopener" aria-label="Ver projeto EV+ no GitHub">
-                <i class='bx bxl-github'></i>
-              </a>
-            </div>
-          </div>
-          <h3>EV+ Sports Analyzer</h3>
-          <p class="project-desc">
-            Bot automatizado para detecção de valor esperado positivo em odds esportivas de 200+
-            ligas. Scanner a cada 2 minutos com alertas via Telegram.
-          </p>
-          <div class="project-tags">
-            <span>Python</span><span>SQLite</span><span>Telegram API</span>
-            <span>APScheduler</span>
-          </div>
-        </article>
-
-        <!-- Projeto 4: Luro -->
-        <article class="project-card">
-          <div class="project-header">
-            <span class="project-year">2025</span>
-            <div class="project-links">
-              <a href="https://github.com/alexarnoni" target="_blank" rel="noopener" aria-label="Repositório Luro no GitHub">
-                <i class='bx bxl-github'></i>
-              </a>
-              <a href="https://luro.alexarnoni.com" target="_blank" rel="noopener" aria-label="Ver projeto Luro">
-                <i class='bx bx-link-external'></i>
-              </a>
-            </div>
-          </div>
+          <span class="project-year">2025 · Projeto encerrado</span>
           <h3>Luro</h3>
-          <p class="project-desc">
-            Gerenciador financeiro pessoal com dashboard, metas e importação de extratos CSV/OFX.
-            Autenticação passwordless via magic link com segurança robusta.
-          </p>
+          <p class="project-desc">Aplicativo de finanças pessoais com importação e deduplicação de extratos CSV/OFX, autenticação por magic link e trilha de auditoria.</p>
           <div class="project-tags">
-            <span>Python</span><span>FastAPI</span><span>PostgreSQL</span>
-            <span>JavaScript</span><span>Docker</span>
+            <span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>Docker</span>
+          </div>
+          <div class="project-links">
+            <a href="https://luro.alexarnoni.com" target="_blank" rel="noopener" aria-label="Ver projeto Luro">Ver projeto</a>
+            <a href="https://github.com/alexarnoni/luro" target="_blank" rel="noopener" aria-label="Ver código de Luro">Ver código</a>
           </div>
         </article>
 
+        <article class="project-card">
+          <span class="project-year">2025 · Projeto encerrado</span>
+          <h3>EV+ Sports Analyzer</h3>
+          <p class="project-desc">Bot que consultava odds esportivas a cada dois minutos, filtrava oportunidades por feed e evitava alertas duplicados no Telegram.</p>
+          <div class="project-tags">
+            <span>Python</span><span>SQLite</span><span>Telegram API</span><span>APScheduler</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/alexarnoni/bot-ev-sqlite" target="_blank" rel="noopener" aria-label="Ver código de EV+ Sports Analyzer">Ver código</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
